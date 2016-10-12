@@ -1,0 +1,27 @@
+{
+  "name": "mongo-throttle",
+  "version": "0.1.0",
+  "description": "Basic IP rate-limiting middleware for Express stored in mongoDB. Use to throttle or limit incoming request rate.",
+  "main": "lib/throttler.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andjosh/mongo-throttle.git"
+  },
+  "keywords": [
+    "rate-limit",
+    "mongo",
+    "mongodb",
+    "throttle",
+    "express",
+    "middleware"
+  ],
+  "author": "email@andjosh.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andjosh/mongo-throttle/issues"
+  },
+  "homepage": "https://github.com/andjosh/mongo-throttle#readme"
+}
