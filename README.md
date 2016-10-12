@@ -1,8 +1,8 @@
 # Mongo Throttle
 
-> Basic IP rate-limiting middleware for Express stored in mongoDB. Use to throttle or limit incoming request rate.
+> Basic IP rate-limiting middleware for Express stored in MongoDB. Use to throttle or limit incoming request rate.
 
-background details relevant to understanding what this module does
+Let MongoDB do the heavy lifting and synchronization of throttling/rate-limiting requestors. This [Express][1] middleware registers and maintains a rate limit for each requesting IP address. It uses MongoDB's built-in expiration index to automatically sweep out expired `Throttle` records.
 
 ## Usage
 ~~~js
@@ -37,11 +37,11 @@ X-Rate-Limit-Reset      # msec until limit reset for IP
 // Configuration options/defaults:
 {
     "rateLimit": {
-        "ttl": 600,
-        "max": 600
+        "ttl": 600      // TTL window for each IP limit
+        "max": 600      // Max hits for IP within window
     },
     "response": {
-        "code":    429,
+        "code":    429, // Response code when limit is reached
         "message": "Rate Limit reached. Please wait and try again."
     }
 }
@@ -77,7 +77,15 @@ Throttle = {
 npm install mongo-throttle [--save]
 ~~~
 
-## Acknowledgments
+## Acknowledgments/Notes
+Mongo has a useful feature called [a TTL index][2].
+
+> TTL collections make it possible to store data in MongoDB and have the mongod automatically remove data after a specified number of seconds or at a specific clock time.
+
+You can tell Mongo to remove data for you! We will use this to remove expired request counts from our rate-limiting check. There are a couple important things to note about this feature:
+
+- As an index, it is set upon collection creation. If you want to change it, you'll have to do so manually.
+- The index-specific field, `expireAfterSeconds`, is _in seconds_. Unlike most other timestamps in your JavaScript code, _don't_ divide this by 1000.
 
 ## See Also
 - [Initial blog post][0]
@@ -87,3 +95,5 @@ npm install mongo-throttle [--save]
 MIT
 
 [0]: http://www.andjosh.com/2016/03/13/rate-limit-node-mongodb/
+[1]: https://expressjs.com
+[2]: https://docs.mongodb.org/manual/tutorial/expire-data/
