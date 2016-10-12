@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/andjosh/mongo-throttle/issues"
   },
-  "homepage": "https://github.com/andjosh/mongo-throttle#readme"
+  "homepage": "https://github.com/andjosh/mongo-throttle#readme",
+  "dependencies": {
+    "mongoose": "^4.6.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
 }
