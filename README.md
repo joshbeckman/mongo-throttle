@@ -4,12 +4,17 @@
 
 Let MongoDB do the heavy lifting and synchronization of throttling/rate-limiting requestors. This [Express][1] middleware registers and maintains a rate limit for each requesting IP address. It uses MongoDB's built-in expiration index to automatically sweep out expired `Throttle` records.
 
+This rate-limiting implementation will scale across multiple servers with the same implementation.
+
 ## Usage
 ~~~js
 var throttler = require('mongo-throttle');
 
 // In Express-style app:
 app.use(throttle());
+
+// Optionally only rate-limit requests that begin with /api/
+app.use('/api/', throttle());
 
 // Optionally configure limits:
 app.use(throttle({ rateLimit: { ttl: 600, max: 5 } }));
