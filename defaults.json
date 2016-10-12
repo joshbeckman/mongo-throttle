@@ -1,0 +1,10 @@
+{
+    "rateLimit": {
+        "ttl": 600,
+        "max": 600
+    },
+    "response": {
+        "code": 429,
+        "message": "Rate Limit reached. Please wait and try again."
+    }
+}
