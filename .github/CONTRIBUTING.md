@@ -12,8 +12,8 @@ Mean Stack JS up to date. We are always looking for the quality contributions an
 will be happy to accept your Pull Requests as long as those adhere to some basic rules:
 
 * Please make sure that your contribution fits well in the project's style & concept:
-  * [Standard JS](http://standardjs.com/)
-  * [Pass All Test](https://travis-ci.org/andjosh/mongo-throttle)
+  * Adhere to [Standard JS](http://standardjs.com/)
+  * [Pass all tests](https://travis-ci.org/andjosh/mongo-throttle)
 
 ## Creating an Issue
 
@@ -35,7 +35,7 @@ Before you create a new Issue:
 
 * Push your changes to your topic branch on your fork of the repo.
 * Submit a pull request from your topic branch to the development branch
-* We use [GitFlow](https://guides.github.com/introduction/flow/)
+* We use [GitHub Flow](https://guides.github.com/introduction/flow/)
 * Be sure to tag any issues your pull request is taking care of / contributing to. EX. `#201 add and updated this`
   * By adding "Closes #xyz" to a commit message will auto close the issue once the pull request is merged in.
   
