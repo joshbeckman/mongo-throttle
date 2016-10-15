@@ -2,8 +2,10 @@ var express = require('express')
 var app = express()
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/mongothrottle')
-var Throttler = require('../lib/throttler')
-app.use(Throttler())
+
+var throttler = require('../lib/throttler')
+app.use(throttler())
+
 // REMOVE PRIOR DOCUMENTS
 var Throttle = mongoose.model('Throttle')
 Throttle.find({}).remove().exec()
