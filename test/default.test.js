@@ -90,12 +90,5 @@ describe('Mongo-Throttle', function () {
         })
     })
   })
-  // app.use(throttle({ rateLimit: { ttl: 600, max: 5 } }))
-  describe('Configire Limit', function () {})
-  // app.use(throttle(function (req, res, hits, remaining) {
-  //   var until = new Date((new Date()).getTime() + remaining)
-  //   res.statusCode = 420
-  //   res.send('You shall not pass ' + hits + ' until ' + until + '!')
-  // }))
-  describe('Configire Custom Limit Header', function () {})
+  describe('Configire Custom Limit Handler', function () {})
 })

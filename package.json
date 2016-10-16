@@ -4,8 +4,9 @@
   "description": "Basic IP rate-limiting middleware for Express stored in mongoDB. Use to throttle or limit incoming request rate.",
   "main": "lib/throttler.js",
   "scripts": {
-    "test": "npm run mocha && npm run standard",
-    "mocha": "node node_modules/mocha/bin/mocha test/mocha.test.js  ",
+    "test": "npm run mocha && npm run mocha_with_config && npm run standard",
+    "mocha": "node node_modules/mocha/bin/mocha test/default.test.js",
+    "mocha_with_config": "node node_modules/mocha/bin/mocha test/config.test.js",
     "standard": "node node_modules/standard/bin/cmd.js || standard"
   },
   "repository": {
