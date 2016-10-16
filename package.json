@@ -1,15 +1,29 @@
 {
   "name": "mongo-throttle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Basic IP rate-limiting middleware for Express stored in mongoDB. Use to throttle or limit incoming request rate.",
   "main": "lib/throttler.js",
   "scripts": {
-    "test": "mocha"
+    "test": "npm run mocha && npm run standard",
+    "mocha": "node node_modules/mocha/bin/mocha test/mocha.test.js  ",
+    "standard": "node node_modules/standard/bin/cmd.js || standard"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andjosh/mongo-throttle.git"
   },
+  "contributors": [
+    {
+      "name": "andjosh",
+      "email": "email@andjosh.com",
+      "web": "https://andjosh.com"
+    },
+    {
+      "name": "greenpioneersolutions",
+      "email": "green@greenpioneersolutions.com",
+      "web": "https://github.com/greenpioneersolutions"
+    }
+  ],
   "keywords": [
     "rate-limit",
     "mongo",
@@ -25,9 +39,29 @@
   },
   "homepage": "https://github.com/andjosh/mongo-throttle#readme",
   "dependencies": {
+    "lodash.defaultsdeep": "^4.6.0",
     "mongoose": "^4.6.3"
   },
   "devDependencies": {
-    "mocha": "^3.1.2"
+    "async": "^2.1.1",
+    "chai": "^3.5.0",
+    "express": "^4.14.0",
+    "mocha": "^3.1.2",
+    "standard": "^8.3.0",
+    "supertest": "^2.0.0"
+  },
+  "standard": {
+    "globals": [
+      "self",
+      "_",
+      "describe",
+      "it",
+      "__dirname",
+      "localStorage",
+      "io",
+      "expect",
+      "inject",
+      "before"
+    ]
   }
 }
