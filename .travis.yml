@@ -8,6 +8,8 @@ os:
   - centos
   - macosx
   - windows
+services:
+  - mongodb
 before_script:
   - npm i -g nsp
 script:
