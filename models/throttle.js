@@ -25,7 +25,7 @@ module.exports = function createThrottle (defaults) {
       type: String,
       required: true,
       trim: true,
-      match: ipRegex
+      match: ipRegex()
     },
     hits: {
       type: Number,
