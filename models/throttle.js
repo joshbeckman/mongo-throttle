@@ -3,6 +3,7 @@
  *
  */
 var mongoose = require('mongoose')
+var ipRegex = require('ip-regex')
 var Schema = mongoose.Schema
 mongoose.Promise = global.Promise
 /**
@@ -24,7 +25,7 @@ module.exports = function createThrottle (defaults) {
       type: String,
       required: true,
       trim: true,
-      match: /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+      match: ipRegex
     },
     hits: {
       type: Number,
