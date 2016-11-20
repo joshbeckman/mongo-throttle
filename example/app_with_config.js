@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/mongothrottle')
 
 var throttler = require('../lib/throttler')
-app.use(throttler({rateLimit: {max: 10}}))
+app.use(throttler({rateLimit: {max: 10}, mongoose: {uri: 'mongodb://localhost/mongothrottle'}}))
 
 // REMOVE PRIOR DOCUMENTS
 var Throttle = mongoose.model('Throttle')

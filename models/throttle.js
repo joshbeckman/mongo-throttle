@@ -14,6 +14,12 @@ mongoose.Promise = global.Promise
  * @return {object} Mongoose Model
  */
 module.exports = function createThrottle (defaults) {
+  if (defaults.mongoose.uri) {
+    mongoose.createConnection(defaults.mongoose.uri)
+  }
+  if (!mongoose.connection.readyState) {
+    console.warn('MongoDB connection not set. Skipping. Fix this by passing mongoose uri option')
+  }
   var Throttle = new Schema({
     createdAt: {
       type: Date,
