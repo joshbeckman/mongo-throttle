@@ -8,6 +8,6 @@
         "message": "Rate Limit reached. Please wait and try again."
     },
     "mongoose":{
-	   "uri": false
-	}
+	"uri": false
+    }
 }

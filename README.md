@@ -48,6 +48,9 @@ X-Rate-Limit-Reset      # msec until limit reset for IP
     "response": {
         "code":    429, // Response code when limit is reached
         "message": "Rate Limit reached. Please wait and try again."
+    },
+    "mongoose":{
+	"uri": false    // Optional Mongo URI connection string
     }
 }
 
