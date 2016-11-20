@@ -18,7 +18,7 @@ module.exports = function createThrottle (defaults) {
     mongoose.createConnection(defaults.mongoose.uri)
   }
   if (!mongoose.connection.readyState) {
-    console.warn('MongoDB connection not set. Skipping. Fix this by passing mongoose uri option')
+    console.warn('MongoDB connection not set. Skipping. Fix this by specifying the mongoose:uri option.')
   }
   var Throttle = new Schema({
     createdAt: {
