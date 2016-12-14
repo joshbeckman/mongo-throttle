@@ -3,7 +3,6 @@
  *
  */
 var mongoose = require('mongoose')
-var ipRegex = require('ip-regex')
 var Schema = mongoose.Schema
 mongoose.Promise = global.Promise
 /**
@@ -30,8 +29,7 @@ module.exports = function createThrottle (defaults) {
     ip: {
       type: String,
       required: true,
-      trim: true,
-      match: ipRegex()
+      trim: true
     },
     hits: {
       type: Number,
