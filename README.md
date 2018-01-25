@@ -50,8 +50,9 @@ X-Rate-Limit-Reset      # msec until limit reset for IP
         "message": "Rate Limit reached. Please wait and try again."
     },
     "mongoose":{
-	"uri": false    // Optional Mongo URI connection string
-    }
+        "uri": false    // Optional Mongo URI connection string
+    },
+    "useCustomHeader": "x-custom-header" // Count hits by the distinct values found in this header, instead of by IP
 }
 
 // When using a custom limit handler:
