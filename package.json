@@ -5,8 +5,8 @@
   "main": "lib/throttler.js",
   "scripts": {
     "test": "npm run mocha && npm run mocha_with_config && npm run standard",
-    "mocha": "node node_modules/mocha/bin/mocha test/default.test.js",
-    "mocha_with_config": "node node_modules/mocha/bin/mocha test/config.test.js",
+    "mocha": "node node_modules/mocha/bin/mocha test/default.test.js --timeout 5000",
+    "mocha_with_config": "node node_modules/mocha/bin/mocha test/config.test.js --timeout 5000",
     "standard": "node node_modules/standard/bin/cmd.js || standard"
   },
   "repository": {
